@@ -12,7 +12,7 @@ Functional connectivity. In this work, functional connectivity between the 100, 
 Functional fingerprinting. As done in previous studies (Amico & Goñi, 2018; Stampacchia et al., 2024), we decided to evaluate the identifiability of the functional fingerprints with Intraclass Correlation Coefficient (ICC). This index was computed edgewise and cumulatively (referred to in the text as: dense-sampling ICC), meaning that ICC was calculated on edges from 1 to n sessions for a total of 9 ICC matrices per atlas and denoising method. ICC edge values are comprised between -1 and 1, a score closer to 1 reflecting a higher inter-subject than intra-subject variability across raters, here represented by the sessions. 
 We opted for the ICC model 2-1 (two-way random effects, absolute agreement, single rater/measurement; see Koo and Li 2017). We used the Matlab’s implementation by Salarian (2008).
   
-ICCedge = (MSR - MSE) / (MSR + (k-1)*MSE + k/n * MSC - MSE)
+ICCedge = MSR - MSE / MSR + (k-1)*MSE + k/n * (MSC - MSE)
 
 MSR = mean square for rows; MSW = mean square for residual sources of variance; MSE = mean square for error; MSC = mean square for columns; n = number of subjects; k = number of measurements, here independent sessions.
 
