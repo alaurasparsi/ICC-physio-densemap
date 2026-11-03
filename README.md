@@ -1,6 +1,10 @@
 # ICC-physio-densemap
 repository for OHBM2026 poster submission
------------------------------------------- methods ------------------------------------------
+
+
+Methods
+
+
 For more information on the dataset, see Moia (2021). In order to answer the research questions, only the first resting-state of each session was analysed, as to avoid potential biases arising from task-related effects, tiredness, discomfort or sleepiness. Unless otherwise specified, all data processing and analyses described in the following sections refer to data collected during resting-state run 1.
 
 Functional connectivity. In this work, functional connectivity between the 100, 400 and 1000 ROIs Schaefer's atlas was calculated in Matlab with the corr() function. To check the quality of the preprocessing output, we did a visual inspection of all connectomes – reorganized according to the 7 Yeo’s networks order.
@@ -13,7 +17,9 @@ ICCedge = (MSR - MSE) / (MSR + (k-1)*MSE + k/n * MSC - MSE)
 MSR = mean square for rows; MSW = mean square for residual sources of variance; MSE = mean square for error; MSC = mean square for columns; n = number of subjects; k = number of measurements, here independent sessions.
 
 
------------------------------------------- template ------------------------------------------
+Template
+
+
 /Template folder contains all templates I used for registration (anat ref:  MNI152lin_T1_1mm_brain.nii.gz from FSL: ~/fsl/data/linearMNI) and for timeseries extraction (Schaefer: https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI). I used the 7 networks order parcellisations, so:
 Schaefer2018_100Parcels_7Networks_order_FSLMNI152_1mm.nii.gz
 Schaefer2018_400Parcels_7Networks_order_FSLMNI152_1mm.nii.gz
@@ -22,7 +28,9 @@ Schaefer2018_1000Parcels_7Networks_order_FSLMNI152_1mm.nii.gz
 Then I dilate and resampled them at 2.5mm, as shown in 1_registration.sh, and I manually reordered labels in order to have ROIs from different hemispheres but same network close to each other.
 
 
------------------------------------------- scripts ------------------------------------------
+Scripts
+
+
 Everything can be done in the container, except for manual peak check/correction, since the container doesn't support images. It can be built with:
 apptainer build -f namecontainer.sif  dir/EuskalIBUR_preproc.def
 
