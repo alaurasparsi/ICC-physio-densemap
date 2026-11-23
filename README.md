@@ -35,7 +35,7 @@ Everything can be done in the container, except for manual peak check/correction
 apptainer build -f namecontainer.sif  dir/EuskalIBUR_preproc.def
 
 Generally, one should start with physiological peak detection, with 0_physio_preproc.py. If you already have minimally preprocessed data, you can directly run 1_registration.sh --> 0_noise_regression.sh --> 2_timeseries_extraction.sh --> 3_functional_connectivity.m --> 4_ICC_ds.m --> 5_poster_figures.m
-If not, you need to follow what done by Stefano Moia in https://github.com/smoia/EuskalIBUR_preproc.
+If not, you need to follow the instructions on the script 0_fMRI_minimal_preproc.sh.
 
 0_noise_regression.sh = 8 denoising models, after which you need to extract timeseries.
 
